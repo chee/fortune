@@ -1,13 +1,14 @@
 extern crate rand;
 
-use std::io::prelude::*;
+use std::io::Read;
 use std::fs::File;
 use rand::distributions::{IndependentSample, Range};
 
 fn main() {
     let mut file = File::open("fortunes").unwrap();
     let mut string = String::new();
-    file.read_to_string(&mut string);
+    file.read_to_string(&mut string)
+        .expect("Failed to read file");
 
     let total = string.split("\n%\n").count();
 
