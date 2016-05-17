@@ -1,0 +1,7 @@
+[package]
+name = "fortune"
+version = "0.1.0"
+authors = ["chee <chee@snaek.org>"]
+
+[dependencies]
+rand = "0.3.0"
