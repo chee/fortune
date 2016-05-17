@@ -2,7 +2,7 @@ extern crate rand;
 
 use std::io::Read;
 use std::fs::File;
-use rand::distributions::{IndependentSample, Range};
+use rand::Rng;
 
 fn main() {
     let mut file = File::open("fortunes").unwrap();
@@ -12,9 +12,7 @@ fn main() {
 
     let total = string.split("\n%\n").count();
 
-    let range = Range::new(0, total);
-
-    let choice = range.ind_sample(&mut rand::thread_rng());// * total;
+    let choice = rand::thread_rng().gen_range(0, total);
 
     let fortune = string.split("\n%\n").nth(choice).unwrap();
     println!("{}", fortune);
