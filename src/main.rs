@@ -10,12 +10,12 @@ fn main() {
     file.read_to_string(&mut string)
         .expect("Failed to read file");
 
-    let fortunes = string.split("\n%\n");
+    let fortunes: Vec<&str> = string.split("\n%\n").collect();
 
-    let total = fortunes.clone().count();
+    let total = fortunes.len();
 
     let choice = rand::thread_rng().gen_range(0, total);
 
-    let fortune = fortunes.clone().nth(choice).unwrap();
+    let fortune = fortunes[choice];
     println!("{}", fortune);
 }
