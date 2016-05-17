@@ -8,7 +8,7 @@ fn main() {
     let mut file = File::open("fortunes").unwrap();
     let mut string = String::new();
     file.read_to_string(&mut string)
-        .expect("Failed to read file");
+        .expect("Failed to read fortunes file");
 
     let fortunes: Vec<&str> = string.split("\n%\n").collect();
 
