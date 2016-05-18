@@ -1,1 +1,1 @@
-cat fortunes | grep "%" -v | shuf | head -1
+grep "%" -v fortunes | shuf | head -1

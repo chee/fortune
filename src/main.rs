@@ -7,6 +7,7 @@ use rand::Rng;
 fn main() {
     let mut file = File::open("fortunes").unwrap();
     let mut string = String::new();
+
     file.read_to_string(&mut string)
         .expect("Failed to read fortunes file");
 
