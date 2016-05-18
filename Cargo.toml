@@ -5,3 +5,6 @@ authors = ["chee <chee@snaek.org>"]
 
 [dependencies]
 rand = "0.3.0"
+
+[[bin]]
+name = "fortune"
